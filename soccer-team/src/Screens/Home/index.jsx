@@ -1,12 +1,14 @@
-import CarouselTemplate from "../../Components/Carousel";
-import { View, Text, FlatList, Image } from 'react-native'
-import Store from "../../Parts/Store";
-import News from './News'
+import { View, Text } from 'react-native'
+import Carousel from '../../Components/Carousel';
+import News from '../../Data/News'
 
 export default function Home() {
+    const carousel = new Carousel(News, true);
     return (
+        <>
         <View style={{ alignItems: 'center', backgroundColor: '#212121' }}>
-            {CarouselTemplate(News, false)}
+            {carousel.renderCarousel(false, 255, '#000')}
         </View>
+        </>
     );
 }

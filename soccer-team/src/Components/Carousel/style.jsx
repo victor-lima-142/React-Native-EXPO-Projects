@@ -2,16 +2,16 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     normalDot: {
-        height: 8,
-        width: 8,
+        height: 6,
+        width: 6,
         borderRadius: 4,
-        backgroundColor: "white",
         shadowColor: "#000",
-        elevation: 2,
+        elevation: 20,
         marginHorizontal: 4
     },
     indicatorContainer: {
-        paddingTop: 5,
+        paddingVertical: 5,
+        paddingBottom: 7,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center"
