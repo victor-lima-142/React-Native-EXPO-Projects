@@ -12,9 +12,9 @@ class Carousel extends Component {
         this.windowWidth = windowWidth;
     }
 
-    renderCarousel(indicators, height, dotsColor = '#FFF') {
+    renderCarousel(height, dotsColor = '#FFF') {
         return (
-            <SafeAreaView style={{ height: (!indicators) ? height + 5 : height + 20}}>
+            <SafeAreaView style={{ height: (!this.indicatorCondition) ? height + 5 : height + 20}}>
                 <ScrollView horizontal={true} pagingEnabled showsHorizontalScrollIndicator={false}
                     onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: this.scrollX } } }], { useNativeDriver: false })} scrollEventThrottle={1}>
                     {this.items.map((element, elementIndex) => {
@@ -25,7 +25,7 @@ class Carousel extends Component {
                         );
                     })}
                 </ScrollView>
-                { (!indicators) ? null : this.indicators(dotsColor) }
+                { (!this.indicatorCondition) ? null : this.indicators(dotsColor) }
             </SafeAreaView>
         )
     }
